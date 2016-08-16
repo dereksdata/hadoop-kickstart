@@ -14,7 +14,7 @@ fs.file-max=943718
 
 # Stock Hadoop net. settings
 net.core.somaxconn=16384
-net.core.netdev_max_backlog=16384
+net.core.netdev_max_backlog=250000
 net.core.rmem_max=134217728
 net.core.wmem_max=134217728
 
@@ -31,12 +31,14 @@ net.ipv4.tcp_fin_timeout=30
 net.ipv4.tcp_retries2=10
 net.ipv4.tcp_synack_retries=3
 net.ipv4.tcp_max_syn_backlog = 4096
-net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_syncookies=1
 net.ipv4.tcp_sack=0
 net.ipv4.tcp_dsack=0
 net.ipv4.tcp_keepalive_time=600
 net.ipv4.tcp_keepalive_probes=5
 net.ipv4.tcp_keepalive_intvl=15
+net.ipv4.tcp_congestion_control=htcp
+
 EOF
 sysctl -p
 
