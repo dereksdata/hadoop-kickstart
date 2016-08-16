@@ -10,20 +10,22 @@ vm.dirty_background_ratio=5
 vm.dirty_ratio=10
 
 # Stock Hadoop fs. settings 
-fs.file-max=943718
+fs.file-max=6544018
 
 # Disable ipv6
 net.ipv6.conf.all.disable_ipv6=1
 net.ipv6.conf.default.disable_ipv6=1
 net.ipv6.conf.lo.disable_ipv6=1
 
-# 10Gbe tuning - still acceptalbe for 1Gbe
+# 10Gbe tuning - usually acceptable for 1Gbe as well
 net.core.rmem_max=134217728
 net.core.wmem_max=134217728
 net.ipv4.tcp_rmem=32768 65536 16777216
 net.ipv4.tcp_wmem=32768 65536 16777216
 net.core.netdev_max_backlog = 250000
 net.ipv4.tcp_congestion_control=htcp
+net.ipv4.tcp_sack = 0
+net.ipv4.tcp_timestamps = 0
 
 # Socket max connections 
 net.core.somaxconn=16384
@@ -40,7 +42,7 @@ net.ipv4.conf.all.log_martians = 1
 net.ipv4.conf.default.log_martians = 1
 
 # ipv4 tuning 
-net.ipv4.ip_local_port_range="4096 61000"
+net.ipv4.ip_local_port_range = 1024 65000
 net.ipv4.tcp_tw_reuse = 1
 net.ipv4.tcp_moderate_rcvbuf = 1
 net.ipv4.tcp_retries2 = 3
