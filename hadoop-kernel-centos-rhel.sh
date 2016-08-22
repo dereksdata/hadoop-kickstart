@@ -77,21 +77,21 @@ SetProperty "kernel.sysrq" "0" "/etc/sysctl.conf"
 
 # Controls whether core dumps will append the PID to the core filename.
 # Useful for debugging multi-threaded applications.
-kernel.core_uses_pid = 1
+SetProperty "kernel.core_uses_pid" "1"
 
 # Disable netfilter on bridges.
-net.bridge.bridge-nf-call-ip6tables = 0
-net.bridge.bridge-nf-call-iptables = 0
-net.bridge.bridge-nf-call-arptables = 0
+SetProperty "net.bridge.bridge-nf-call-ip6tables" "0"
+SetProperty "net.bridge.bridge-nf-call-iptables" "0"
+SetProperty "net.bridge.bridge-nf-call-arptables" "0"
 
 # Controls the maximum size of a message, in bytes
-kernel.msgmnb = 65536
+SetProperty "kernel.msgmnb" "65536"
 
 # Controls the default maxmimum size of a mesage queue
-kernel.msgmax = 65536
+SetProperty "kernel.msgmax" "65536"
 
 # Controls the maximum shared segment size, in bytes
-kernel.shmmax = 68719476736
+SetProperty "kernel.shmma" "68719476736"
 
 sysctl -p
 
