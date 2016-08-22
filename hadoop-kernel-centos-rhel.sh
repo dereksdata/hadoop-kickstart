@@ -79,11 +79,6 @@ SetProperty "kernel.sysrq" "0" "/etc/sysctl.conf"
 # Useful for debugging multi-threaded applications.
 SetProperty "kernel.core_uses_pid" "1" "/etc/sysctl.conf"
 
-# Disable netfilter on bridges.
-SetProperty "net.bridge.bridge-nf-call-ip6tables" "0" "/etc/sysctl.conf"
-SetProperty "net.bridge.bridge-nf-call-iptables" "0" "/etc/sysctl.conf"
-SetProperty "net.bridge.bridge-nf-call-arptables" "0" "/etc/sysctl.conf"
-
 # Controls the maximum size of a message, in bytes
 SetProperty "kernel.msgmnb" "65536" "/etc/sysctl.conf"
 
@@ -91,7 +86,7 @@ SetProperty "kernel.msgmnb" "65536" "/etc/sysctl.conf"
 SetProperty "kernel.msgmax" "65536" "/etc/sysctl.conf"
 
 # Controls the maximum shared segment size, in bytes
-SetProperty "kernel.shmma" "68719476736" "/etc/sysctl.conf"
+SetProperty "kernel.shmmax" "68719476736" "/etc/sysctl.conf"
 
 sysctl -p
 
