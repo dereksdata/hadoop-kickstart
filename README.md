@@ -10,7 +10,3 @@ Additionally, we needed something that was non-destructive that could be safely 
 What I've put together is a script that do the above based upon the current (as of August 2016) Hadoop norms.  It is optimised for 10Gbe networking but should still function fine for 1Gbe.
  
 Hopefully, others can also correct, modify and update as we go along.
-
-Current ToDo:
-- Verify Tagar's Spark optimisations
-- Revalidate Impala disk write cache settings for Impala 2.6
