@@ -36,7 +36,7 @@ SetProperty "net.ipv6.conf.all.disable_ipv6" "1" "/etc/sysctl.conf"
 SetProperty "net.ipv6.conf.default.disable_ipv6" "1" "/etc/sysctl.conf"
 SetProperty "net.ipv6.conf.lo.disable_ipv6" "1" "/etc/sysctl.conf"
 
-# 10Gbe tuning - usually acceptable for 1Gbe as well" "/etc/sysctl.conf"
+# 10Gbe tuning - usually acceptable for 1Gbe as well
 SetProperty "net.core.rmem_max" "134217728" "/etc/sysctl.conf"
 SetProperty "net.core.wmem_max" "134217728" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_rmem" "32768 65536 16777216" "/etc/sysctl.conf"
@@ -46,10 +46,10 @@ SetProperty "net.ipv4.tcp_sack " "0" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_timestamps" "0" "/etc/sysctl.conf"
 SetProperty "net.core.netdev_max_backlog" "250000" "/etc/sysctl.conf"
 
-# Socket max connections " "/etc/sysctl.conf"
+# Socket max connections
 SetProperty "net.core.somaxconn" "16384" "/etc/sysctl.conf"
 
-# ipv4 security settings" "/etc/sysctl.conf"
+# ipv4 security settings
 SetProperty "net.ipv4.conf.all.accept_source_route" "0" "/etc/sysctl.conf"
 SetProperty "net.ipv4.conf.default.accept_source_route" "0" "/etc/sysctl.conf"
 SetProperty "net.ipv4.icmp_echo_ignore_broadcasts" "1" "/etc/sysctl.conf"
@@ -61,7 +61,7 @@ SetProperty "net.ipv4.conf.all.log_martians" "1" "/etc/sysctl.conf"
 SetProperty "net.ipv4.conf.default.log_martians" "1" "/etc/sysctl.conf"
 SetProperty "net.ipv4.conf.default.rp_filter" "1" "/etc/sysctl.conf"
 
-# ipv4 tuning " "/etc/sysctl.conf"
+# ipv4 tuning
 SetProperty "net.ipv4.ip_local_port_range" "1024 65000" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_tw_reuse" "1" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_moderate_rcvbuf" "1" "/etc/sysctl.conf"
