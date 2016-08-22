@@ -1,5 +1,6 @@
 # hadoop-kickstart
-Kickstart snippet for Hadoop RHEL/Centos installation
+Kickstart snippet for Hadoop RHEL/Centos installation kernel and other low level system settings.
+
 (from http://www.dereksdata.com/single-post/2016/08/18/Safe-Hadoop-Kernel-Configuration-Script)
 
 For ages, I've been looking for someone to produce a nice general purpose script for Linux hosts that sets the optimal kernel settings for a Hadoop node maintained to the current Hadoop release.  While there are a number of scripts out there they tend to be pretty inconsistent or very specific to a particular implementation.
