@@ -1,11 +1,12 @@
 #!/bin/bash
 # Bash script to set the Kernel settings for Hadoop installations
-# v1.3 dereksdata 20160816
+# v1.4 dereksdata 20160822
 # 
 #   1.0 Initial release 
 #   1.1 Updated for Linux kernel 2.6 changes
 #   1.2 Updated for 10Gbe (1Gbe safe) defaults
 #   1.3 Added rerun-safe, SetProperty duplicate entry safety
+#   1.4 20160822 Added verified changes from Tagar
 
 SetProperty() {
 	key=$(printf %s "$1" | sed 's/[][()\.^$?*+]/\\&/g')
@@ -58,6 +59,7 @@ SetProperty "net.ipv4.tcp_max_syn_backlog" "4096" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_synack_retries" "3" "/etc/sysctl.conf"
 SetProperty "net.ipv4.conf.all.log_martians" "1" "/etc/sysctl.conf"
 SetProperty "net.ipv4.conf.default.log_martians" "1" "/etc/sysctl.conf"
+SetProperty "net.ipv4.conf.default.rp_filter" "1" "/etc/sysctl.conf"
 
 # ipv4 tuning " "/etc/sysctl.conf"
 SetProperty "net.ipv4.ip_local_port_range" "1024 65000" "/etc/sysctl.conf"
@@ -68,6 +70,28 @@ SetProperty "net.ipv4.tcp_keepalive_time" "600" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_keepalive_probes" "5" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_keepalive_intvl" "15" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_fin_timeout" "10" "/etc/sysctl.conf"
+SetProperty "net.ipv4.ip_forward" "0" "/etc/sysctl.conf"
+
+# Controls the System Request debugging functionality of the kernel
+SetProperty "kernel.sysrq" "0" "/etc/sysctl.conf"
+
+# Controls whether core dumps will append the PID to the core filename.
+# Useful for debugging multi-threaded applications.
+kernel.core_uses_pid = 1
+
+# Disable netfilter on bridges.
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+
+# Controls the maximum size of a message, in bytes
+kernel.msgmnb = 65536
+
+# Controls the default maxmimum size of a mesage queue
+kernel.msgmax = 65536
+
+# Controls the maximum shared segment size, in bytes
+kernel.shmmax = 68719476736
 
 sysctl -p
 
