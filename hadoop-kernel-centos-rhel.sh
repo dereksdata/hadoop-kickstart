@@ -7,6 +7,7 @@
 #   1.2 Updated for 10Gbe (1Gbe safe) defaults
 #   1.3 Added rerun-safe, SetProperty duplicate entry safety
 #   1.4 20160822 Added verified changes from Tagar
+#   1.5 20160826 Moved THP disable to rc.local
 
 SetProperty() {
 	key=$(printf %s "$1" | sed 's/[][()\.^$?*+]/\\&/g')
@@ -99,10 +100,7 @@ if ! grep -q "* - nproc 65536" /etc/security/limits.conf; then
 fi
 
 # Disable THP
-if test -f /sys/kernel/mm/redhat_transparent_hugepage/enabled; then
-  echo never > /sys/kernel/mm/redhat_transparent_hugepage/enabled
+if ! grep -q redhat_transparent_hugepage /etc/rc.local; then
+    echo "echo never > /sys/kernel/mm/redhat_transparent_hugepage/enabled" >> /etc/rc.local
+    echo "echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag" >> /etc/rc.local
 fi
-if test -f /sys/kernel/mm/redhat_transparent_hugepage/defrag; then
-  echo never > /sys/kernel/mm/redhat_transparent_hugepage/defrag
-fi
-
