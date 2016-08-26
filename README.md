@@ -1,5 +1,6 @@
 # hadoop-kickstart
-Kickstart snippet for Hadoop RHEL/Centos installation kernel and other low level system settings.
+Optimised kernel and network settings configuration script Hadoop installed on RHEL/Centos.
+Can also be used as part of a kickstart build. 
 
 (from http://www.dereksdata.com/single-post/2016/08/18/Safe-Hadoop-Kernel-Configuration-Script)
 
