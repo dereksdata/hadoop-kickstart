@@ -7,6 +7,4 @@ For ages, I've been looking for someone to produce a nice general purpose script
  
 Additionally, we needed something that was non-destructive that could be safely run multiple times against the same host without fear of any issues.  Clearly the echo >> /etc/sysctl.conf approach wasn't going to cut it.
  
-What I've put together is a script that do the above based upon the current (as of August 2016) Hadoop norms.  It is optimised for 10Gbe networking but should still function fine for 1Gbe.
- 
-Hopefully, others can also correct, modify and update as we go along.
+This is a collaboratively developed script that do the above based upon the current (as of August 2016) Hadoop norms.  It is optimised for 10Gbe networking but should still function fine for 1Gbe.
