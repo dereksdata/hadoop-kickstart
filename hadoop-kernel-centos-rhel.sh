@@ -1,6 +1,6 @@
 #!/bin/bash
 # Bash script to set the Kernel settings for Hadoop installations
-# v1.4 dereksdata 20160822
+# v1.5 dereksdata 20160826
 # 
 #   1.0 Initial release 
 #   1.1 Updated for Linux kernel 2.6 changes
