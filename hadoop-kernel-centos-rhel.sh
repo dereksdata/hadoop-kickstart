@@ -38,8 +38,6 @@ SetProperty "net.ipv6.conf.default.disable_ipv6" "1" "/etc/sysctl.conf"
 SetProperty "net.ipv6.conf.lo.disable_ipv6" "1" "/etc/sysctl.conf"
 
 # 10Gbe tuning - usually acceptable for 1Gbe as well
-SetProperty "net.core.rmem_max" "134217728" "/etc/sysctl.conf"
-SetProperty "net.core.wmem_max" "134217728" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_rmem" "32768 65536 16777216" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_wmem" "32768 65536 16777216" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_congestion_control" "htcp" "/etc/sysctl.conf"
@@ -49,8 +47,10 @@ SetProperty "net.core.netdev_max_backlog" "250000" "/etc/sysctl.conf"
 
 # Socket tuning
 SetProperty "net.core.somaxconn" "16384" "/etc/sysctl.conf"
-SetProperty "net.core.rmem_default" "262144"
-SetProperty "net.core.wmem_default" "262144"
+SetProperty "net.core.rmem_max" "134217728" "/etc/sysctl.conf"
+SetProperty "net.core.wmem_max" "134217728" "/etc/sysctl.conf"
+SetProperty "net.core.rmem_default" "262144" "/etc/sysctl.conf"
+SetProperty "net.core.wmem_default" "262144" "/etc/sysctl.conf"
 
 # ipv4 security settings
 SetProperty "net.ipv4.conf.all.accept_source_route" "0" "/etc/sysctl.conf"
