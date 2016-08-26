@@ -1,6 +1,6 @@
 # hadoop-kickstart
 
-**Optimised kernel and network settings configuration script Hadoop installed on RHEL/Centos.**
+**Optimised kernel and network settings configuration script for Hadoop installed on RHEL/Centos.**
 
 General purpose script for Linux hosts that sets the optimal kernel settings for a Hadoop node maintained to the current Hadoop release. Can be used as part of a kickstart build. Non-destructive and can be safely run multiple times against the same host without fear of misconfiguration.
 
