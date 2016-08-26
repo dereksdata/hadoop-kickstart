@@ -7,7 +7,7 @@
 #   1.2 Updated for 10Gbe (1Gbe safe) defaults
 #   1.3 Added rerun-safe, SetProperty duplicate entry safety
 #   1.4 20160822 Added verified changes from Tagar
-#   1.5 20160826 Moved THP disable to rc.local
+#   1.5 20160826 Moved THP disable to rc.local and additional socket tuning
 
 SetProperty() {
 	key=$(printf %s "$1" | sed 's/[][()\.^$?*+]/\\&/g')
@@ -47,8 +47,10 @@ SetProperty "net.ipv4.tcp_sack " "0" "/etc/sysctl.conf"
 SetProperty "net.ipv4.tcp_timestamps" "0" "/etc/sysctl.conf"
 SetProperty "net.core.netdev_max_backlog" "250000" "/etc/sysctl.conf"
 
-# Socket max connections
+# Socket tuning
 SetProperty "net.core.somaxconn" "16384" "/etc/sysctl.conf"
+SetProperty "net.core.rmem_default" "262144"
+SetProperty "net.core.wmem_default" "262144"
 
 # ipv4 security settings
 SetProperty "net.ipv4.conf.all.accept_source_route" "0" "/etc/sysctl.conf"
